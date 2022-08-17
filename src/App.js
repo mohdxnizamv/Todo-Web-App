@@ -10,19 +10,30 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
+
 				<p>{myName}</p>
-				<p>{myAge}</p>
-				<button onClick={() => setMyName('Dea Afrizal')}>
+
+				<button onClick={() => setMyName('Dea Afrizal')} className="mt-5">
 					klik untuk tukar nama
 				</button>
 
-				<button onClick={() => setMyAge((state) => state + 1)}>
-					Tambah Umur
-				</button>
+				<div className="d-flex mt-3">
+					<button
+						onClick={() => setMyAge((state) => state + 1)}
+						className="me-5"
+					>
+						+
+					</button>
 
-				<button onClick={() => setMyAge((state) => state - 1)}>
-					Kurang Umur
-				</button>
+					<p>{myAge}</p>
+
+					<button
+						onClick={() => setMyAge((state) => state - 1)}
+						className="ms-5"
+					>
+						-
+					</button>
+				</div>
 			</header>
 		</div>
 	);
