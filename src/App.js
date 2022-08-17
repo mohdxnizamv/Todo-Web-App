@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import { Container, Button, Card, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Add from './Add';
+import List from "./List";
 
 function App() {
 	const [todoName, setTodoName] = useState("");
@@ -33,26 +34,8 @@ function App() {
 
 			{/* List Todo */}
 			<div className="mt-5">
-				{todoList.map((value, index) => {
-					return (
-						<Card className='mt-3'>
-							<Card.Body>
-								<Row>
-									{/* Nama Todo */}
-									<Col>
-										<h3>{value.todoName}</h3>
-									</Col>
+				<List todoList={todoList} deleteTodo={deleteTodo} />
 
-									{/* Button Todo*/}
-									<Col xl="1">
-										<Button>Selesai</Button>
-									</Col>
-								</Row>
-								<Button variant='danger' className='mt-2' onClick={() => deleteTodo(index)}>Hapus</Button>
-							</Card.Body>
-						</Card>
-					);
-				})}
 			</div>
 		</Container>
 	);

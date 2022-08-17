@@ -3,7 +3,6 @@ import { FaPlusCircle } from "react-icons/fa";
 
 const Add = ({ handleChangeTodoName, todoName, addTodo }) => {
   return (
-
     <Card className='mt-5'>
       <Card.Body>
         <Stack direction='horizontal' gap={3}>
