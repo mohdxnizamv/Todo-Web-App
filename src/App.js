@@ -7,9 +7,18 @@ function App() {
 
   const [todoList, setTodoList] = useState([]);
 
-  const addTodo = () => {};
+  const addTodo = () => {
+    const dataTodo = {todoName, status: false};
+    setTodoList([dataTodo, ...todoList]);
+    setTodoName("");
+  };
 
-  const handleChangeTodoName = (e) => {const data = e.target.value;console.log(data);};
+  const handleChangeTodoName = (e) => {
+    const data = e.target.value;
+
+    setTodoName(data);
+  };
+
 
 	return (
 		<Container>
@@ -19,28 +28,34 @@ function App() {
 			<Card className='mt-5'>
 				<Card.Body>
 					<Stack direction='horizontal' gap={3}>
-						<Form.Control type="text" placeholder="Masukan todo.." onChange={handleChangeTodoName}/>
-						<Button>Tambah </Button>
+						<Form.Control type="text" placeholder="Masukan todo.." onChange={handleChangeTodoName}
+            value={todoName}
+            />
+						<Button onClick={addTodo}>Tambah </Button>
 					</Stack>
 				</Card.Body>
 			</Card>
 
 			{/* List Todo */}
-			<Card className='mt-5'>
-				<Card.Body>
-					<Row>
-            {/* Nama Todo */}
-						<Col>
-							<h3>Nama Todo</h3>
-						</Col>
+      {todoList.map(value => {
+        return (
+        <Card className='mt-5'>
+				  <Card.Body>
+					  <Row>
+              {/* Nama Todo */}
+						  <Col>
+							  <h3>Nama Todo</h3>
+						  </Col>
 
-						{/* Button Todo*/}
-						<Col xl="1">
-							<Button>Selesai</Button>
-						</Col>
-					</Row>
-				</Card.Body>
-			</Card>
+						  {/* Button Todo*/}
+						  <Col xl="1">
+							  <Button>Selesai</Button>
+						  </Col>
+					  </Row>
+				  </Card.Body>
+			  </Card>
+        );
+      })}
 		</Container>
 	);
 }
