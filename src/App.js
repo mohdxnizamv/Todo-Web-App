@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import { Container, Form, Button, Stack, Card, Row, Col } from "react-bootstrap"
-import { FaPlusCircle } from "react-icons/fa";
+import { Container, Button, Card, Row, Col } from "react-bootstrap";
+import Add from './Add';
 
 function App() {
 	const [todoName, setTodoName] = useState("");
@@ -29,16 +29,7 @@ function App() {
 			<h1 className='text-center mt-5'>Todo Web App</h1>
 
 			{/* Input Todo */}
-			<Card className='mt-5'>
-				<Card.Body>
-					<Stack direction='horizontal' gap={3}>
-						<Form.Control type="text" placeholder="Masukan todo.." onChange={handleChangeTodoName}
-							value={todoName}
-						/>
-						<Button onClick={addTodo}><FaPlusCircle /></Button>
-					</Stack>
-				</Card.Body>
-			</Card>
+			<Add handleChangeTodoName={handleChangeTodoName} todoName={todoName} addTodo={addTodo} />
 
 			{/* List Todo */}
 			<div className="mt-5">
