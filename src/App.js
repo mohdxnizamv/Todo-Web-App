@@ -4,17 +4,7 @@ import './App.css';
 
 function App() {
 	const [myName, setMyName] = useState('mohdxnizamv');
-	const [myName2, setMyName2] = useState('mohdxnizamv');
-	const [myAge] = useState(100);
-
-	console.log(myName);
-	console.log(myName2);
-
-	console.log({ myName });
-	console.log({ myName2 });
-
-	console.log('ini stated yg myname', myName);
-	console.log('ini stated yg myname2', myName2);
+	const [myAge, setMyAge] = useState(25);
 
 	return (
 		<div className="App">
@@ -22,7 +12,17 @@ function App() {
 				<img src={logo} className="App-logo" alt="logo" />
 				<p>{myName}</p>
 				<p>{myAge}</p>
-				<button onClick={() => setMyName('Dea Afrizal')}>Ganti Nama</button>
+				<button onClick={() => setMyName('Dea Afrizal')}>
+					klik untuk tukar nama
+				</button>
+
+				<button onClick={() => setMyAge((state) => state + 1)}>
+					Tambah Umur
+				</button>
+
+				<button onClick={() => setMyAge((state) => state - 1)}>
+					Kurang Umur
+				</button>
 			</header>
 		</div>
 	);
