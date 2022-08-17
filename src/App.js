@@ -7,11 +7,11 @@ function App() {
 	const [myName2, setMyName2] = useState('mohdxnizamv');
 	const [myAge] = useState(100);
 
-  console.log(myName);
-  console.log(myName2);
+	console.log(myName);
+	console.log(myName2);
 
-  console.log({ myName});
-  console.log({ myName2 });
+	console.log({ myName });
+	console.log({ myName2 });
 
 	console.log('ini stated yg myname', myName);
 	console.log('ini stated yg myname2', myName2);
