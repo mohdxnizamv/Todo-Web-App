@@ -19,9 +19,14 @@ function App() {
 		setTodoList(todoList.filter((value, idx) => index !== idx));
 	};
 
+	const finishTodo = (index) => {
+		const cloneTodoList = [...todoList]
+		cloneTodoList[index].status = !cloneTodoList[index].status;
+		setTodoList(cloneTodoList);
+	};
+
 	const handleChangeTodoName = (e) => {
 		const data = e.target.value;
-
 		setTodoName(data);
 	};
 
