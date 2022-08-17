@@ -20,7 +20,7 @@ function App() {
 	};
 
 	const finishTodo = (index) => {
-		const cloneTodoList = [...todoList]
+		const cloneTodoList = [...todoList];
 		cloneTodoList[index].status = !cloneTodoList[index].status;
 		setTodoList(cloneTodoList);
 	};
