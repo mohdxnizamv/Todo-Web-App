@@ -1,5 +1,5 @@
 import { Form, Button, Stack, Card } from "react-bootstrap";
-import { FaPlusCircle } from "react-icons/fa";
+import { BiBookmark } from "react-icons/bi";
 
 const Add = ({ handleChangeTodoName, todoName, addTodo }) => {
   return (
@@ -9,7 +9,7 @@ const Add = ({ handleChangeTodoName, todoName, addTodo }) => {
           <Form.Control type="text" placeholder="Masukan todo.." onChange={handleChangeTodoName}
             value={todoName}
           />
-          <Button onClick={addTodo}><FaPlusCircle /></Button>
+          <Button onClick={addTodo}><BiBookmark /></Button>
         </Stack>
       </Card.Body>
     </Card>
