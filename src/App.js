@@ -20,7 +20,7 @@ function App() {
 	};
 
 	const finishTodo = (index) => {
-		const cloneTodoList = [...todoList];
+		const cloneTodoList = [...todoList]
 		cloneTodoList[index].status = !cloneTodoList[index].status;
 		setTodoList(cloneTodoList);
 	};
@@ -39,7 +39,7 @@ function App() {
 
 			{/* List Todo */}
 			<div className="mt-5">
-				<List todoList={todoList} deleteTodo={deleteTodo} />
+				<List todoList={todoList} deleteTodo={deleteTodo} finishTodo={finishTodo} />
 
 			</div>
 		</Container>
